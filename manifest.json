@@ -1,6 +1,6 @@
 {
-  "short_name": "Countdown Timer",
-  "name": "Simple Countdown Timer",
+  "short_name": "Weather App",
+  "name": "Simple Weather App",
   "icons": [
     {
       "src": "favicon.ico",
