@@ -1,4 +1,4 @@
-console.log('hello from sw')
+console.log('hello from custom sw')
 workbox.routing.registerRoute(
   new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
   workbox.strategies.cacheFirst({
