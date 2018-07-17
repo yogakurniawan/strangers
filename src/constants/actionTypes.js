@@ -1,6 +1,7 @@
-import { createConstants } from 'utils/common'
+import { createActionTypes } from 'utils/common'
 
-export default createConstants(
-  'SET_RUNNING',
-  'SET_TIME_LEFT'
-)
+export const FETCH_WEATHER = createActionTypes('FETCH_WEATHER')
+
+// export default createConstants(
+//   'FETCH_WEATHER'
+// )

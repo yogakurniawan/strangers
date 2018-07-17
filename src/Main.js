@@ -1,11 +1,11 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Countdown from 'containers/Countdown'
+import Weather from 'containers/Weather'
 
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Countdown} />
+      <Route exact path='/' component={Weather} />
     </Switch>
   </main>
 )

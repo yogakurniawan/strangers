@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
-import countdown from './countdown'
+import weather from './weather'
 import loading from './loadingReducer'
 import error from './errorReducer'
 
 export default combineReducers({
-  countdown,
+  weather,
   loading,
   error
 })
