@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
 
 importScripts(
-  "/weather-app/precache-manifest.c4b36629001196a0cd7e8b4512fd0079.js"
+  "/strangers/precache-manifest.021bb2bb527636ce151df61f449016fe.js"
 );
 
 workbox.clientsClaim();
@@ -29,8 +29,8 @@ workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerNavigationRoute("/index.html", {
-
-  blacklist: [/^\/__/, /\/[^\/]+.[^\/]+$/],
+  
+  blacklist: [/^\/__/,/\/[^\/]+.[^\/]+$/],
 });
 
 workbox.routing.registerRoute(
@@ -50,7 +50,7 @@ workbox.routing.registerRoute(
 
 self.addEventListener('fetch', function (e) {
   console.log('[Service Worker] Fetch', e.request.url);
-  if (/openweathermap/i.test(e.request.url)) {
+  if (/reqres/i.test(e.request.url)) {
     /*
      * When the request URL contains dataUrl, the app is asking for fresh
      * weather data. In this case, the service worker always goes to the
