@@ -35,7 +35,7 @@ workbox.routing.registerNavigationRoute("/index.html", {
 
 workbox.routing.registerRoute(
   new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
-  workbox.strategies.networkFirst({
+  workbox.strategies.cacheFirst({
     cacheName: 'google-fonts',
     plugins: [
       new workbox.expiration.Plugin({
