@@ -59,20 +59,20 @@ self.addEventListener('fetch', function (e) {
      * https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
      */
 
-    // const staleWhileRevalidate = new workbox.strategies.StaleWhileRevalidate();
-    // e.respondWith(staleWhileRevalidate.handle({ event: e }));
+    const staleWhileRevalidate = new workbox.strategies.StaleWhileRevalidate();
+    e.respondWith(staleWhileRevalidate.handle({ event: e }));
 
-    e.respondWith(
-      caches.open('api-cache').then(function (cache) {
-        return cache.match(e.request).then(function (response) {
-          var fetchPromise = fetch(e.request).then(function (networkResponse) {
-            cache.put(e.request, networkResponse.clone());
-            return networkResponse;
-          })
-          return response || fetchPromise;
-        })
-      })
-    );
+    // e.respondWith(
+    //   caches.open('api-cache').then(function (cache) {
+    //     return cache.match(e.request).then(function (response) {
+    //       var fetchPromise = fetch(e.request).then(function (networkResponse) {
+    //         cache.put(e.request, networkResponse.clone());
+    //         return networkResponse;
+    //       })
+    //       return response || fetchPromise;
+    //     })
+    //   })
+    // );
   } else {
     e.respondWith(
       caches.match(e.request).then(function (response) {
