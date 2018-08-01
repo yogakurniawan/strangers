@@ -1,7 +1,7 @@
-import { createActionTypes } from 'utils/common'
+import { createActionTypes, createConstants } from 'utils/common'
 
-export const FETCH_WEATHER = createActionTypes('FETCH_WEATHER')
+export const FETCH_STRANGERS = createActionTypes('FETCH_STRANGERS')
 
-// export default createConstants(
-//   'FETCH_WEATHER'
-// )
+export default createConstants(
+  'SET_EMPTY'
+)

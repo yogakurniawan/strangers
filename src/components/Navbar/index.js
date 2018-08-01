@@ -4,9 +4,8 @@ import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
+import RefreshIcon from '@material-ui/icons/Refresh'
 
 const styles = {
   root: {
@@ -14,34 +13,30 @@ const styles = {
   },
   flex: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
+  }
 };
 
-function Weather(props) {
-  const { classes } = props;
+function Navbar(props) {
+  const { classes, onRefresh } = props;
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            News
+            Strangers
           </Typography>
-          <Button color="inherit">Login</Button>
+          <IconButton onClick={onRefresh} color="inherit" aria-label="Menu">
+            <RefreshIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
 
-Weather.propTypes = {
+Navbar.propTypes = {
   classes: PropTypes.object.isRequired,
+  onRefresh: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(Weather);
+export default withStyles(styles)(Navbar);
